@@ -36,6 +36,7 @@ def play(songs)
   end
 end
 end
+
 def wait_for_command
   loop do
     print "Please enter a command: "
