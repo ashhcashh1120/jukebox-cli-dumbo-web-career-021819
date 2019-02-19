@@ -25,9 +25,9 @@ def list (songs)
 end
 
 def play(songs)
-  input = gets.chomp
-  songs.each_with_index do |song, idx|
-    if input.to_i == (idx+1) || input == song
+  response = gets.chomp
+  songs.each_with_index do |song, i|
+    if response.to_i == (i+1) || response == song
       puts "Playing #{song}"
       break
     else
