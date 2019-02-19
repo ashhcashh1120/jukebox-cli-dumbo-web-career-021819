@@ -25,17 +25,14 @@ def list (songs)
 end
 
 def play(songs)
-  choosen = nil
-  puts "Please enter a song name or number:"
-  response = gets.chomp
-  songs.each_with_index do |song, i|
-    if response == song || response == (i+1).to_s
-    choosen = song
+  input = gets.chomp
+  songs.each_with_index do |song, idx|
+    if input.to_i == (idx+1) || input == song
+      puts "Playing #{song}"
+      break
+    else
+      puts "Invalid input, please try again"
+      break
   end
-end
-if choosen == nil
-  puts "Invalid input, please try again"
-else
-  puts "Playing #{picked_song}"
 end
 end
