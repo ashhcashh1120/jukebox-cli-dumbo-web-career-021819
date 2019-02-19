@@ -37,33 +37,22 @@ def play(songs)
 end
 end
 
-def wait_for_command
-  loop do
-    print "Please enter a command: "
-    command = gets.chomp.downcase.strip
-    case command
-      when 'exit'
-        exit_jukebox
-        break
-      when 'help'
-        help
-      when 'list'
-        list(all_songs)
-      when 'play'
-        play(all_songs)
-    end
-  end
-end
 
 def run(songs)
-  puts "Please enter your name:"
-  users_name = gets.chomp
-  puts say_hello(users_name)
-  puts "Here are the commands available to you."
   help
-  wait_for_command
-end
-
-def exit_jukebox
-  puts "Goodbye!"
+  loop do
+    puts "Please enter a command:"
+    input = gets.chomp
+    case input
+    when 'play'
+      play(songs)
+    when 'help'
+      help
+    when 'list'
+      list(songs)
+    when 'exit'
+      break
+    end
+  end
+  exit_jukebox
 end
